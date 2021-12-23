@@ -1,0 +1,12 @@
+identifier: kex6j5k6ed86cd91
+appPort: 1864
+staticPort: 1668
+reloadPort: 2667
+hostName: localhost
+projectName: my-blog
+homeFolder: C:\Users\bksin\OneDrive\Desktop\Projects_Misc\Angular12Projects\my-blog
+distFolder: dist/my-blog
+outDir: >-
+  C:\Users\bksin\OneDrive\Desktop\Projects_Misc\Angular12Projects\my-blog\dist\static
+handle404: ''
+allowErrorCollect: true
