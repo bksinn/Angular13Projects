@@ -1,24 +1,19 @@
 <clr-datagrid>
-    <clr-dg-column [clrDgField]="'issueNo'" [clrDgColType]="'number'">Issue No</clr-dg-column>
-    <crl-dg-column [clrDgField]="'type'"  [clrDgColType]="'text'">Type</crl-dg-column>
-    <crl-dg-column [clrDgField]="'title'">Title</crl-dg-column>
-    <crl-dg-column [clrDgField]="'description'">Description</crl-dg-column>
-    <crl-dg-column [clrDgField]="'priority'">Priority</crl-dg-column>
+    <clr-dg-column [clrDgField]="'issueNo'" [clrDogColType]="'number'">Issue No</clr-dg-column>
+    <clr-dg-column [clrDgField]="'type'">Type</clr-dg-column>
+    <clr-dg-column [clrDgField]="'title'">Title</clr-dg-column>
+    <clr-dg-column [clrDgField]="'description'">Description</clr-dg-column>
+    <clr-dg-column [clrDgField]="'priority'">Priority</clr-dg-column>
 
     <clr-dg-row *clrDgItems="let issue of issues">
-        <crl-dg-cell>{{issue.issueNo}}</crl-dg-cell>
-        <crl-dg-cell>{{issue.type}}</crl-dg-cell>
-        <crl-dg-cell>{{issue.title}}</crl-dg-cell>
-        <crl-dg-cell>{{issue.description}}</crl-dg-cell>
-        <crl-dg-cell>
-            <span class="label" [class.label-danger]="issue.priorty === 'high'">{{issue.priority}}</span>
-        </crl-dg-cell>
+        <clr-dg-cell>{{issue.issueNo}}</clr-dg-cell>
+        <clr-dg-cell>{{issue.type}}</clr-dg-cell>
+        <clr-dg-cell>{{issue.title}}</clr-dg-cell>
+        <clr-dg-cell>{{issue.description}}</clr-dg-cell>
+        <clr-dg-cell>
+            <span class="label" [class.label-danger]="issue.priority === 'high'">{{issue.priority}}</span>
+        </clr-dg-cell>
     </clr-dg-row>
     <clr-dg-footer>{{issues.length}} issues</clr-dg-footer>
 
 </clr-datagrid>
-
-
-<div *ngFor="let issue of issues">
-    {{issue | json }}
-</div>
