@@ -18,6 +18,11 @@ export class IssuesService {
     this.issues.push(issue);
   }
 
+  editIssue(editedIssue: Issue) {
+    const index : number = this.issues.findIndex(i => i.issueNo === editedIssue.issueNo);
+    this.issues[index] = editedIssue;
+  }
+
   completeIssue(issue: Issue) {
     const selectedIssue: Issue = {...issue, completed: new Date()};
     const index = this.issues.findIndex(i => i === issue);

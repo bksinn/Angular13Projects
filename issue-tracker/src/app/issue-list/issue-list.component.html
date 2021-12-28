@@ -12,6 +12,9 @@
     
         <clr-dg-row *clrDgItems="let issue of issues">
             <clr-dg-action-overflow>
+                <button class="action-item" (click)="edit(issue)">
+                    Edit
+                </button>
                 <button class="action-item" (click)="selectedIssue = issue">
                     Resolve
                 </button>
@@ -31,11 +34,13 @@
 
 <app-issue-report 
     *ngIf="showReportIssue === true"
-    (formClose)="onCloseReport()">
+    [issueEdit] = "selectedIssue"
+    (formClose)="onCloseReport()"
+    (formEdit)="onEditReport()">
 </app-issue-report>
 
 <app-confirm-dialog 
-    *ngIf="selectedIssue"
+    *ngIf="selectedIssue && showReportIssue == false"
     [issueNo]="selectedIssue.issueNo"
     (confirm)="onConfirm($event)">
 </app-confirm-dialog>

@@ -48,6 +48,7 @@
         <clr-control-error>Type is required</clr-control-error>
     </clr-select-container>
 
-    <button class="btn btn-primary" type="submit">Create</button>
+    <button class="btn btn-primary" type="submit" *ngIf="!issueEdit">Create</button>
+    <button class="btn btn-primary" type="button" *ngIf="issueEdit" (click)="editIssue(issueForm)">Update</button>
     <button class="btn" type="button" (click)="formClose.emit()">Cancel</button>
 </form>

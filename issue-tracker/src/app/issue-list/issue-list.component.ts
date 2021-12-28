@@ -20,11 +20,22 @@ export class IssueListComponent implements OnInit {
 
   private getIssues() {
     this.issues = this.issueService.getPendingIssues();
-    console.log(this.issues);
   }
 
   onCloseReport() {
     this.showReportIssue = false;
+    this.getIssues();
+  }
+
+  
+  edit(issue: Issue) {
+    this.showReportIssue = true;
+    this.selectedIssue = issue;
+  }
+
+  onEditReport() {
+    this.showReportIssue = false;
+    this.selectedIssue = null;
     this.getIssues();
   }
 
@@ -36,4 +47,5 @@ export class IssueListComponent implements OnInit {
 
     this.selectedIssue = null;
   }
+
 }

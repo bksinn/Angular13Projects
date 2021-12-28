@@ -1,18 +1,15 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-confirm-dialog',
   templateUrl: './confirm-dialog.component.html',
   styleUrls: ['./confirm-dialog.component.css']
 })
-export class ConfirmDialogComponent implements OnInit {
+export class ConfirmDialogComponent {
   @Input() issueNo: number | null = null;
   @Output() confirm = new EventEmitter<boolean>();
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   agree() {
     this.confirm.emit(true);
