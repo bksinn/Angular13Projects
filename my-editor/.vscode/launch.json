@@ -3,11 +3,14 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "ng serve",
-      "type": "pwa-chrome",
+      "type": "pwa-node",
       "request": "launch",
-      "preLaunchTask": "npm: start",
-      "url": "http://localhost:4200/"
+      "name": "Launch Program",
+      "skipFiles": [
+          "<node_internals>/**"
+      ],
+      "program": "${workspaceRoot}/dist/my-editor/shell.js",
+      "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron"
     },
     {
       "name": "ng test",

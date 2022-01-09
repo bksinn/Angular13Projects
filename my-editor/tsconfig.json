@@ -4,6 +4,9 @@
   "compilerOptions": {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
+    "types": [
+      "electron"
+    ],
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,

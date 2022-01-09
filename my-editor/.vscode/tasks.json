@@ -1,5 +1,6 @@
 {
   // For more information, visit: https://go.microsoft.com/fwlink/?LinkId=733558
+  "program":"~/dist/my-editor/shell.js",
   "version": "2.0.0",
   "tasks": [
     {
