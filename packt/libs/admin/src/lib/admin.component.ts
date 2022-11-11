@@ -14,7 +14,7 @@ export class AdminComponent implements OnInit, OnDestroy {
 
   private subscription: Subscription | undefined;
   data: number[] = [];
-  labels: any[] = [];
+  labels: string[] = [];
 
   constructor(private store: Store, private adminService: AdminService) { }
 
@@ -32,8 +32,8 @@ export class AdminComponent implements OnInit, OnDestroy {
   buildChart(pois: PoiEntity[]) {
     this.labels = pois.map(poi => poi.name);
     this.data = this.adminService.getStatistics(pois);
-
     console.log(this.data);
+    console.log(this.labels);
   }
 
 }
