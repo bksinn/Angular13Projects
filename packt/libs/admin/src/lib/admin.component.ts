@@ -2,8 +2,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { PoiActions, PoiEntity, PoiSelectors } from '@packt/poi';
 import { Subscription } from 'rxjs';
-//import { Label } from 'ng2-charts';
+import { LegendPosition } from '@swimlane/ngx-charts';
 import { AdminService } from './admin.service';
+import { PieChartType } from './PieChartType';
 
 @Component({
   selector: 'packt-admin',
@@ -11,10 +12,9 @@ import { AdminService } from './admin.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit, OnDestroy {
-
-  private subscription: Subscription | undefined;
-  data: number[] = [];
-  labels: string[] = [];
+  subscription: Subscription | undefined;
+  pieChartData: PieChartType[] = []
+  legendPosition: LegendPosition = LegendPosition.Below;
 
   constructor(private store: Store, private adminService: AdminService) { }
 
@@ -30,10 +30,13 @@ export class AdminComponent implements OnInit, OnDestroy {
   }
 
   buildChart(pois: PoiEntity[]) {
-    this.labels = pois.map(poi => poi.name);
-    this.data = this.adminService.getStatistics(pois);
-    console.log(this.data);
-    console.log(this.labels);
+    this.pieChartData = pois.map(poi => {
+      const chartData: PieChartType = {
+        name: poi.name,
+        value: this.adminService.getStatistic(poi)
+      }
+      return chartData;
+    });
   }
 
 }

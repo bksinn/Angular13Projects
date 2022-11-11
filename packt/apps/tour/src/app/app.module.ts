@@ -26,11 +26,11 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
         loadChildren: () => import('@packt/admin').then((m) => m.AdminModule),
       },
       {
-        path: 'tour',
+        path: 'pois',
         loadChildren: () =>
           import('@packt/visitor').then((m) => m.VisitorModule),
       },
-      { path: '', pathMatch: 'full', redirectTo: 'tour' },
+      { path: '', pathMatch: 'full', redirectTo: 'pois' },
     ]),
     StoreModule.forRoot(
       {},

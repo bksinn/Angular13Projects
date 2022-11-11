@@ -18,9 +18,14 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>visitor</span>
+      <p>Visitor</p>
     </mat-toolbar>
-    <!-- Add Content Here -->
+    <div class="content">
+      <p>
+        Select a point of interest from the menu on the left.
+      </p>
+      <p>To see statistics, <a [routerLink]="['/admin']">go to admin</a></p>
+    </div>
     <packt-map></packt-map>
   </mat-sidenav-content>
 </mat-sidenav-container>

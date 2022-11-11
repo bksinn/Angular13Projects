@@ -15,4 +15,9 @@ export class AdminService {
       return +stat;
     })
   }
+
+  getStatistic(poi: PoiEntity) {
+    const stat = localStorage.getItem('tour-' + poi.id) ?? 0;
+      return +stat;
+  }
 }

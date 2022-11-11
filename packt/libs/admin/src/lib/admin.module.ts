@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AdminComponent } from './admin.component';
 import { RouterModule } from '@angular/router';
 import { PoiModule } from '@packt/poi';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @NgModule({
   imports: [
@@ -10,7 +11,8 @@ import { PoiModule } from '@packt/poi';
     RouterModule.forChild([
       {path: '', component: AdminComponent}]
     ),
-    PoiModule
+    PoiModule,
+    NgxChartsModule
   ],
   declarations: [
     AdminComponent

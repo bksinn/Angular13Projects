@@ -1,3 +1,15 @@
-<div class="chart" *ngIf="data.length">
-
+<div class="chart" *ngIf="pieChartData.length">
+  <h1>Admin Portal</h1>
+  <h2>Point of Interest Statistics</h2>
+  <a [routerLink]="['/pois']">See points of interests</a>
+  <ngx-charts-pie-chart
+    [view]="[700, 400]"
+    [results]="pieChartData"
+    [gradient]="true"
+    [legend]="true"
+    [legendPosition]="legendPosition"
+    [labels]="true"
+    [doughnut]="true"
+  >
+</ngx-charts-pie-chart>
 </div>
