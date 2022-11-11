@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
 import { RouterModule } from '@angular/router';
 import { PoiModule } from '@packt/poi';
 import { PoiListComponent } from './poi-list/poi-list.component';
@@ -17,6 +18,7 @@ import { MapComponent } from './map/map.component';
   imports: [
     CommonModule,
     LayoutModule,
+    MatCardModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
