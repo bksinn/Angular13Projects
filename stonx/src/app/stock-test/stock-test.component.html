@@ -1,1 +1,20 @@
-<p>stock-test works!</p>
+<div class="container" style="display:block;">
+    <div class="chart">
+        <h2>Test Chart</h2>
+        <hr />
+
+        <ngx-charts-bar-vertical
+            [view]="[700, 400]"
+            [results]="single"
+            [xAxis]="xAxis"
+            [yAxis]="yAxis"
+            [legend]="legend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel">
+        </ngx-charts-bar-vertical>
+    </div>
+    
+</div>
+
